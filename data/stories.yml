@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+
+- story: historia1
+  steps:
+  - intent: cumprimentar
+  - action: utter_cumprimentar
+  - intent: tudo_bem
+  - action: utter_tudo_bem
+  - intent: despedir
+  - action: utter_despedir
+
+- story: historia2
+  steps:
+  - intent: cumprimentar
+  - action: utter_cumprimentar
+  - intent: despedir
+  - action: utter_despedir
+
+- story: historia3
+  steps:
+  - intent: tudo_bem
+  - action: utter_tudo_bem
+  - intent: despedir
+  - action: utter_despedir
+
+- story: historia4
+  steps:
+  - intent: cumprimentar
+  - action: utter_cumprimentar
+  - intent: tudo_bem
+  - action: utter_tudo_bem
+  - intent: despedir
+  - action: utter_despedir

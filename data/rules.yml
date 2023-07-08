@@ -1,0 +1,170 @@
+version: "3.1"
+
+rules:
+
+- rule: cumprimentar
+  steps:
+  - intent: cumprimentar
+  - action: utter_cumprimentar
+
+- rule: despedir
+  steps:
+  - intent: despedir
+  - action: utter_despedir
+
+- rule: encontrar_servico
+  steps:
+  - intent: encontrar_servico
+  - action: utter_vinculo
+
+- rule: boa_vindas
+  steps:
+  - intent: boas_vindas
+  - action: utter_boas_vindas
+  - action: action_verificar_banco_de_dados
+
+- rule: modelo_estudante
+  steps:
+  - intent: modelo_estudante
+  - action: action_encontrar_servico
+
+- rule: sim
+  steps:
+  - intent: sim
+  - action: utter_sim
+
+
+- rule: mais_cinco_servicos
+  steps:
+  - intent: mais_cinco_servicos
+  - action: action_mais_cinco_servicos
+
+- rule: reformular_mensagem
+  steps:
+  - intent: nlu_fallback
+  - action: utter_nlu_fallback
+
+- rule: perguntar
+  steps:
+  - intent: perguntar
+  - action: utter_perguntar
+
+- rule: prograd
+  steps:
+  - intent: prograd
+  - action: utter_prograd
+
+- rule: sim_prograd
+  steps:
+  - intent: sim_prograd
+  - action: utter_sim_prograd
+
+- rule: pesquisar_google
+  steps:
+  - intent: pesquisar_google
+  - action: action_pesquisar_google
+
+- rule: prppg
+  steps:
+  - intent: prppg
+  - action: utter_prppg
+
+- rule: sim_prppg
+  steps:
+  - intent: sim_prppg
+  - action: utter_sim_prppg
+
+- rule: proace
+  steps:
+  - intent: proace
+  - action: utter_proace
+
+- rule: sim_proace
+  steps:
+  - intent: sim_proace
+  - action: utter_sim_proace
+
+- rule: biblioteca
+  steps:
+  - intent: biblioteca
+  - action: utter_biblioteca
+
+- rule: sim_biblioteca
+  steps:
+  - intent: sim_biblioteca
+  - action: utter_sim_biblioteca
+
+- rule: proad
+  steps:
+  - intent: proad
+  - action: utter_proad
+
+- rule: sim_proad
+  steps:
+  - intent: sim_proad
+  - action: utter_sim_proad
+
+- rule: citec
+  steps:
+  - intent: citec
+  - action: utter_citec
+
+- rule: sim_citec
+  steps:
+  - intent: sim_citec
+  - action: utter_sim_citec
+
+- rule: sti
+  steps:
+  - intent: sti
+  - action: utter_sti
+
+- rule: sim_sti
+  steps:
+  - intent: sim_sti
+  - action: utter_sim_sti
+
+- rule: dicom
+  steps:
+  - intent: dicom
+  - action: utter_dicom
+
+- rule: sim_dicom
+  steps:
+  - intent: sim_dicom
+  - action: utter_sim_dicom
+
+- rule: dri
+  steps:
+  - intent: dri
+  - action: utter_dri
+
+- rule: sim_dri
+  steps:
+  - intent: sim_dri
+  - action: utter_sim_dri
+
+- rule: ama
+  steps:
+  - intent: ama
+  - action: utter_ama
+
+- rule: sim_ama
+  steps:
+  - intent: sim_ama
+  - action: utter_sim_ama
+
+- rule: proplan
+  steps:
+  - intent: proplan
+  - action: utter_proplan
+
+- rule: sim_proplan
+  steps:
+  - intent: sim_proplan
+  - action: utter_sim_proplan
+
+- rule: nao_proexc
+  steps:
+  - intent: nao_proexc
+  - action: utter_nao_proexc

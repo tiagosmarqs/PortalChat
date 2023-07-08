@@ -1,0 +1,369 @@
+version: "3.1"
+
+intents:
+  - cumprimentar
+  - despedir
+  - encontrar_servico
+  - tudo_bem
+  - boas_vindas
+  - modelo_estudante
+  - sim
+  - mais_cinco_servicos
+  - perguntar
+  - prograd
+  - sim_prograd
+  - pesquisar_google
+  - prppg
+  - sim_prppg
+  - proace
+  - sim_proace
+  - biblioteca
+  - sim_biblioteca
+  - proad
+  - sim_proad
+  - citec
+  - sim_citec
+  - sti
+  - sim_sti
+  - dicom
+  - sim_dicom
+  - dri
+  - sim_dri
+  - ama
+  - sim_ama
+  - proplan
+  - sim_proplan
+  - nao_proexc
+
+actions:
+  - action_encontrar_servico
+  - action_verificar_banco_de_dados
+  - action_mais_cinco_servicos
+  - action_pesquisar_google
+
+entities:
+   - servico
+
+responses:
+  utter_cumprimentar:
+  - text: |
+      Olá!
+      
+      Para encontrar um serviço, me envie uma mensagem assim: "Encontrar: SERVIÇO QUE VOCÊ DESEJA ENCONTRAR".
+
+  - text: |
+      Oii!
+      
+      Se vc deseja encontrar um serviço, me envie uma mensagem assim: "Encontrar: SERVIÇO QUE VOCÊ DESEJA ENCONTRAR".
+      
+  utter_despedir:
+  - text: |
+      Foi um prazer te ajudar!
+
+      Sempre que quiser encontrar algum serviço, volte aqui!
+
+      Até logo!
+
+  - text: |
+      Foi um grande prazer te ajudar!
+
+      Sempre que precisar encontrar um serviço, volte aqui!
+
+      Até mais!
+
+  - text: |
+      Foi um prazer te ajudar!
+
+      Quando precisar encontrar algum serviço, volte aqui!
+      
+      Até mais!
+
+  utter_tudo_bem:
+  - text: |
+      Tudo bem, obrigada! 
+      
+      Para encontrar um serviço, me envie uma mensagem assim: "Encontrar: SERVIÇO QUE VOCÊ DESEJA ENCONTRAR".
+
+  utter_boas_vindas:
+  - text: |
+      Olá! Sou o PortalChat, o chatbot da Carta de Serviços ao Usuário da UFVJM.
+
+      Para encontrar um serviço, me envie uma mensagem assim: "Encontrar: SERVIÇO QUE VOCÊ DESEJA ENCONTRAR".
+
+  - text: |
+      Oii! Sou o PortalChat, o chatbot da Carta de Serviços ao Usuário da UFVJM.
+      
+      Se você deseja encontrar um serviço, me envie uma mensagem assim: "Encontrar: SERVIÇO QUE VOCÊ DESEJA ENCONTRAR".
+
+  utter_nlu_fallback:
+  - text: |
+      Desculpe, não entendi.
+
+  - text: |
+      Não entendi, reformule a mensagem.
+
+  utter_vinculo:
+  - text: |
+      Qual o seu vínculo com a UFVJM?
+    buttons:
+    - title: "Estudante"
+      payload: "/modelo_estudante"
+
+  - text: |
+      Qual é a relação que você possui com a UFVJM?
+    buttons:
+    - title: "Estudante"
+      payload: "/modelo_estudante"
+
+  utter_sim:
+  - text: |
+      Obrigado por confirmar. Fico feliz em poder ajudar!
+
+  - text: |
+      Obrigado pela confirmação. Fico feliz em ter te ajudado!
+
+  utter_perguntar:
+  - text: |
+      Dê uma olhada na [carta de serviços](https://portal.ufvjm.edu.br/servicos), talvez você encontre o que procura.
+
+      Caso não encontre, eu posso tentar te ajudar. Mas para isso, vou precisar fazer algumas perguntas. Deseja continuar?
+    buttons:
+    - title: "Sim"
+      payload: "/prograd"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_prograd:
+  - text: |
+       Você procura por serviços relacionados à formas de ingresso, monitoria, calendário escolar, estágio ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_prograd"
+    - title: "Não"
+      payload: "/prppg"
+
+  utter_sim_prograd:
+  - text: |
+       Acho que o que você procura está no [site da Prograd](http://ufvjm.edu.br/prograd/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_prppg:
+  - text: |
+       Você procura por serviços relacionados à cursos de pós-graduação (stricto sensu e lato sensu), grupos de pesquisa ou similares? 
+    buttons:
+    - title: "Sim"
+      payload: "/sim_prppg"
+    - title: "Não"
+      payload: "/proace"
+
+  utter_sim_prppg:
+  - text: |
+       Acho que o que você procura está no [site da Prppg](https://portal.ufvjm.edu.br/prppg).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_proace:
+  - text: |
+       Você procura por serviços relacionados à assistência estudantil, moradia estudantil, transporte gratuito ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_proace"
+    - title: "Não"
+      payload: "/biblioteca"
+
+  utter_sim_proace:
+  - text: |
+       Acho que o que você procura está no [site da Proace](http://www.ufvjm.edu.br/proace/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_biblioteca:
+  - text: |
+       Você procura por serviços relacionados à livros da biblioteca ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_biblioteca"
+    - title: "Não"
+      payload: "/proad"
+
+  utter_sim_biblioteca:
+  - text: |
+       Acho que o que você procura está no [site da biblioteca](http://www.ufvjm.edu.br/biblioteca/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_proad:
+  - text: |
+       Você procura por serviços relacionados à solicitação de veículo, aquisição de materiais gráficos, serviço de impressão ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_proad"
+    - title: "Não"
+      payload: "/citec"
+
+  utter_sim_proad:
+  - text: |
+       Acho que o que você procura está no [site da Proad](http://www.ufvjm.edu.br/proad/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_citec:
+  - text: |
+       Você procura por serviços relacionados à registro de marca, depósito de patente, registro de programa de computador ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_citec"
+    - title: "Não"
+      payload: "/sti"
+
+  utter_sim_citec:
+  - text: |
+       Acho que o que você procura está no [site do CITec](http://ufvjm.edu.br/citec/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_sti:
+  - text: |
+       Você procura por serviços relacionados ao e-mail institucional, algum dos sistemas da universidade ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_sti"
+    - title: "Não"
+      payload: "/dicom"
+
+  utter_sim_sti:
+  - text: |
+       Acho que o que você procura está no [site da STI](http://novo.ufvjm.edu.br/sti/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_dicom:
+  - text: |
+       Você procura por serviços relacionados à divulgação nos veículos de comunicação institucionais, orientações sobre publicidade e marca institucional ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_dicom"
+    - title: "Não"
+      payload: "/dri"
+
+  utter_sim_dicom:
+  - text: |
+       Acho que o que você procura está no [site da Dicom](http://www.ufvjm.edu.br/dicom.html).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_dri:
+  - text: |
+       Você procura por serviços relacionados à cursos de ensino de línguas, mobilidade acadêmica internacional ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_dri"
+    - title: "Não"
+      payload: "/ama"
+
+  utter_sim_dri:
+  - text: |
+       Acho que o que você procura está no [site da DRI](http://www.ufvjm.edu.br/dri/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_ama:
+  - text: |
+       Você procura por serviços relacionados à regularização ambiental e licenciamentos ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_ama"
+    - title: "Não"
+      payload: "/proplan"
+
+  utter_sim_ama:
+  - text: |
+       Acho que o que você procura está na [página da AMA](http://www.ufvjm.edu.br/administracao/assessorias/meio-ambiente.html).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_proplan:
+  - text: |
+       Você procura por serviços relacionados à emissão de relatórios orçamentários, de nota de empenho (despesa, reforço e anulação) ou similares?
+    buttons:
+    - title: "Sim"
+      payload: "/sim_proplan"
+    - title: "Não"
+      payload: "/nao_proexc"
+
+  utter_sim_proplan:
+  - text: |
+       Acho que o que você procura está no [site da Proplan](http://ufvjm.edu.br/proplan/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+  utter_nao_proexc:
+  - text: |
+       Acho que o que você procura está no [site da Proexc](http://www.ufvjm.edu.br/proexc/).
+
+       Encontrou o que estava procurando?
+    buttons:
+    - title: "Sim"
+      payload: "/sim"
+    - title: "Não"
+      payload: "/pesquisar_google"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
